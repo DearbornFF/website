@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import get from "lodash/get"
 
 import Layout from "../components/layout"
@@ -10,6 +11,7 @@ import heroImage from "../assets/images/395825912_296679093248716_26871865186436
 
 const DirectionsPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
+  const page = get(props, 'data.contentfulPages');
   const details = get(props, 'data.contentfulOperatingDetails');
   return (
     <Layout>
@@ -19,7 +21,7 @@ const DirectionsPage = (props) => {
         position="-40%"
       />
       <Article>
-        ...
+      {renderRichText(page.content)}
       </Article>
     </Layout>
   )
@@ -36,9 +38,14 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    contentfulOperatingDetails(hours: {children: {}}) {
-      hours {
-        hours
+    contentfulPages(slug: { eq: "directions" }) {
+      title
+      label
+      description {
+        description
+      }
+      content{
+        raw
       }
     }
   }
