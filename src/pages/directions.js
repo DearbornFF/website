@@ -1,29 +1,34 @@
 import * as React from "react"
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
+import { graphql } from "gatsby"
+import get from "lodash/get"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+import Layout from "../components/layout"
+import Hero from "../components/hero"
+import Article from "../components/article"
+
+import heroImage from "../assets/images/395825912_296679093248716_2687186518643641950_n.jpg"
 
 const DirectionsPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const details = get(props, 'data.contentfulOperatingDetails');
   return (
-    <main style={pageStyles}>
-      🎉 Directions
-      <p>{title} + {description}</p>
-      <p>{JSON.stringify(details)}</p>
-    </main>
+    <Layout>
+      <Hero 
+        title="Contact and directions"
+        background={heroImage}
+        position="-40%"
+      />
+      <Article>
+        ...
+      </Article>
+    </Layout>
   )
 }
 
 export default DirectionsPage
 
 export const pageQuery = graphql`
-  query DirectionsQuery {
+  query IndexQuery {
     site {
       siteMetadata {
         title

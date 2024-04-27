@@ -2,7 +2,9 @@ import * as React from "react"
 import styled from "styled-components"
 
 const ArticleStyled = styled.article`
-  padding:24px 32px;
+  margin: 0 auto;
+  padding: var(--spacingHorizontalXXL) var(--spacingHorizontalXXXL);
+  width: 90%;
 `;
 
 const Article = (props) => {

@@ -1,10 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import Header from "../header"
-import HuckleImage from "../../assets/graphx/huckleberries.png"
-import PumpImage from "../../assets/graphx/pumpkins.png"
-
 
 const HeroStyled = styled.div`
     overflow: hidden;
@@ -16,7 +12,6 @@ const HeroStyled = styled.div`
     .bg {
         opacity: 0.5;
         position: absolute;
-        margin-top:0;
         width: 100%;
         height: auto;
         z-index:0;
@@ -27,21 +22,22 @@ const HeroStyled = styled.div`
         margin:0;
         padding:0;
         font-family: "Atteron";
-        font-size: var(--fontSizeHero1200);
-        color:azure;
+        font-size: var(--fontSizeHero800);
+        color:white;
         text-shadow: var(--shadow28Brand);
         z-index:1;
+        @media screen and (min-width: 821px) {
+          font-size: var(--fontSizeHero1200);
+        }
     }
 `;
 
 const Hero = (props) => {
   return (
-    <>
     <HeroStyled>
         <h1>{props.title}</h1>
-        <img src={props.background} className="bg" />
+        <img src={props.background} style={{marginTop:props.position}} className="bg" />
     </HeroStyled>
-    </>
   )
 }
 

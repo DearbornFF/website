@@ -1,29 +1,34 @@
 import * as React from "react"
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
+import { graphql } from "gatsby"
+import get from "lodash/get"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+import Layout from "../components/layout"
+import Hero from "../components/hero"
+import Article from "../components/article"
 
-const EventsPage = (props) => {
+import heroImage from "../assets/images/396056459_296683003248325_2332290033367886716_n.jpg"
+
+const AboutPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const details = get(props, 'data.contentfulOperatingDetails');
   return (
-    <main style={pageStyles}>
-      🎉 About
-      <p>{title} + {description}</p>
-      <p>{JSON.stringify(details)}</p>
-    </main>
+    <Layout>
+      <Hero 
+        title="About the farm"
+        background={heroImage}
+        position="0"
+      />
+      <Article>
+        ...
+      </Article>
+    </Layout>
   )
 }
 
-export default EventsPage
+export default AboutPage
 
 export const pageQuery = graphql`
-  query EventsQuery {
+  query IndexQuery {
     site {
       siteMetadata {
         title

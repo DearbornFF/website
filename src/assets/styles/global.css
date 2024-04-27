@@ -3,20 +3,63 @@
     font-size: clamp(.875rem,.4626rem + 1.0309vw + var(--user-font-scale),1.125rem);
     scroll-behavior: smooth;
 }
+@media screen and (max-width: 800px) {
+   :root {
+    --maxWidth: 95vw;
+   }
+}
 html, body {margin: 0; padding: 0;}
+html{box-sizing: border-box;}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body{
     font-size: 1rem;
     font-family: var(--fontFamilyBase);
     font-weight: 300;
     font-style: normal;
-    color:rgba(40,45,50,0.95);
+    color:rgba(40,45,50,0.80);
 }
 h1,h2,h3,h4,h5, header a{
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--fontFamilyHeading);
     font-weight: 100;
 }
 h1,h2,h3{
     margin-left:auto;
     margin-right:auto;
-    width:70%;
+    margin-bottom:0;
+    padding:0;
+    width:80%;
+}
+h1{
+    font-size: var(--fontSizeBase1000);
+}
+h2{
+    font-size: var(--fontSizeHero900);
+    margin-top: var(--spacingVerticalXXS);
+    font-weight: 100;
+}
+h3{
+    font-size: var(--fontSizeHero800);
+    margin-top: var(--spacingVerticalL);
+    font-weight: 400;
+    color: var(--colorSeasonSummerDark);
+}
+h3+p{
+    margin-top: var(--spacingVerticalXXXL);
+}
+p{
+    margin: var(--spacingVerticalXXL) 0 0;
+    padding: 0;
+    text-align: left;
+}
+u{
+    box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--colorSeasonSummerLight);
+    text-decoration: none;
+}
+a:focus{
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border:0;
 }

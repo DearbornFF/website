@@ -1,4 +1,5 @@
 [data-theme=webLightTheme],:root {
+    --maxWidth: 90vw;
     --borderRadiusNone: 0;
     --borderRadiusSmall: 2px;
     --borderRadiusMedium: 4px;
@@ -13,8 +14,8 @@
     --fontSizeBase600: 24px;
     --fontSizeHero700: 28px;
     --fontSizeHero800: 32px;
-    --fontSizeHero900: 40px;
-    --fontSizeHero1000: 68px;
+    --fontSizeHero900: 48px;
+    --fontSizeHero1000: 56px;
     --fontSizeHero1100: 80px;
     --fontSizeHero1200: 92px;
     --lineHeightBase100: 14px;
@@ -27,6 +28,8 @@
     --lineHeightHero800: 40px;
     --lineHeightHero900: 52px;
     --lineHeightHero1000: 92px;
+    --lineHeightHero1100: 96px;
+    --lineHeightHero1200: 120px;
     --fontFamilyBase: "Noto Sans", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     --fontFamilyBrand: "Atteron", "Courier New", Courier, monospace;
     --fontFamilyHeading: "Barlow Condensed", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
@@ -58,8 +61,8 @@
     --spacingVerticalM: 12px;
     --spacingVerticalL: 16px;
     --spacingVerticalXL: 20px;
-    --spacingVerticalXXL: 24px;
-    --spacingVerticalXXXL: 32px;
+    --spacingVerticalXXL: 32px;
+    --spacingVerticalXXXL: 48px;
     --durationUltraFast: 50ms;
     --durationFaster: .1s;
     --durationFast: .15s;
@@ -76,7 +79,29 @@
     --curveEasyEaseMax: cubic-bezier(.8, 0, .1, 1);
     --curveEasyEase: cubic-bezier(.33, 0, .67, 1);
     --curveLinear: cubic-bezier(0, 0, 1, 1);
-    --colorNeutralForeground1: #242424;
+    --colorNeutral1: rgba(0,0,0,.1);
+    --colorNeutral2: rgba(0,0,0,.24);
+    --colorNeutral3: rgba(0,0,0,.5);
+    --colorNeutral4: rgba(0,0,0,.7);
+    --colorNeutral5: rgba(0,0,0,.9);
+    --colorSeasonSpringLight: #91c19f;
+    --colorSeasonSpringDark: #3a5e45;
+    --colorSeasonSummerLight: #e7c265;
+    --colorSeasonSummerDark: #d1a63b;
+    --colorSeasonFallLight: #e17b55;
+    --colorSeasonFallDark: #c54d21;
+    --colorSeasonWinterLight: #3f4bd1;
+    --colorSeasonWinterDark: #171e66;
+    --durationUltraFast: 50ms;
+    --durationFaster: 100ms;
+    --durationFast: 150ms;
+    --durationNormal: 200ms;
+    --durationSlow: 300ms;
+    --durationSlower: 400ms;
+    --durationUltraSlow: 1500ms;
+    --underlineLight: -0.0325em;
+    --underlineMedium: -0.110rem;
+    --underlineHeavy: -0.125rem;
     --shadow2: 0 0 2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .14);
     --shadow4: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .14);
     --shadow8: 0 0 2px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .14);
