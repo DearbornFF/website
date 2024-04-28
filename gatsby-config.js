@@ -1,6 +1,8 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require('dotenv').config({path: `./.env`})
+; 
 module.exports = {
   siteMetadata: {
     siteName: `Dearborn Family Farm`,
@@ -12,8 +14,8 @@ module.exports = {
   {
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "ki_PxTnAbCJSaV1DP8KmYnAvt_CKFlkM4PnvxP0SUSo",
-      "spaceId": "rxdo758may96"
+      "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
+      "spaceId": process.env.CONTENTFUL_SPACEID
     }
   }, {
     resolve: 'gatsby-plugin-manifest',
