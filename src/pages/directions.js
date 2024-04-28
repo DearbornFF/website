@@ -3,11 +3,12 @@ import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import get from "lodash/get"
 
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
 
-import heroImage from "../assets/images/395825912_296679093248716_2687186518643641950_n.jpg"
+import heroImage from "../assets/images/396175471_296682689915023_8972487937204021691_n.jpg"
 
 const DirectionsPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
@@ -16,9 +17,11 @@ const DirectionsPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title="Contact and directions"
+        title={props.data.contentfulPages.title}
         background={heroImage}
-        position="-40%"
+        position="-25%"
+        height="40vh"
+        className="small"
       />
       <Article>
       {renderRichText(page.content)}
@@ -28,6 +31,13 @@ const DirectionsPage = (props) => {
 }
 
 export default DirectionsPage
+
+export const Head = (props) => (
+  <SEO 
+    title={props.data.contentfulPages.title} 
+    description={props.data.contentfulPages.description.description}>
+  </SEO>
+)
 
 export const pageQuery = graphql`
   query IndexQuery {

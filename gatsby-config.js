@@ -3,9 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Dearborn Family Farm`,
+    siteName: `Dearborn Family Farm`,
+    title: `Organic produce and pumpkin patch`,
     description: `goo`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.dearbornfamilyfarm.com`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", 
   {
@@ -14,8 +15,7 @@ module.exports = {
       "accessToken": "ki_PxTnAbCJSaV1DP8KmYnAvt_CKFlkM4PnvxP0SUSo",
       "spaceId": "rxdo758may96"
     }
-  },
-  {
+  }, {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/assets/graphx/icon.png"

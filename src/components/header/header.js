@@ -5,11 +5,14 @@ import { Link } from "gatsby"
 import NameImage from "../../assets/graphx/name.png"
 
 const HeaderStyled = styled.header`
-    padding:24px 0 0;
+    padding: 0;
     background:rgba(255,255,255,0.75);
+    @media screen and (min-width: 821px) {
+      padding: var(--spacingVerticalXL) 0 0;
+    }
 `;
 const NavStyled = styled.header`
-    padding:0 32px 32px;
+    padding:0 var(--spacingHorizontalM) var(--spacingVerticalXXL);
     ul{
       margin:0;
       padding:0;
@@ -21,24 +24,28 @@ const NavStyled = styled.header`
       list-style:none;
     }
     li{
-      margin: 0 16px;
+      margin:0;
       padding:0;
       text-align: center;
-      flex: 1 1 20em;
+      flex: 1 1 160px;
     }
     li:nth-child(1) { 
       flex: 2 2 100%;
     }
-    @media screen and (min-width: 821px) {
+    @media screen and (min-width: 1280px) {
+      padding:0 var(--spacingHorizonalXXXL) var(--spacingVerticalXXL);
       ul{
         flex-direction: row wrap;
       }
+      li{
+        margin: 0 var(--spacingHorizonalXXXL);
+      }
       li:nth-child(1) { 
-        padding:0 48px;
+        padding:0 72px;
         flex: 0 0 auto;
       }
       li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){
-        padding-top:82px;
+        padding-top:78px;
         flex: 0 0 auto;
       }
       li:nth-child(1) { order: 3; }
@@ -49,12 +56,15 @@ const NavStyled = styled.header`
     }
     a{
       display: inline-block;
-      padding: var(--spacingVerticalM) var(--spacingHorizontalM);
+      padding: var(--spacingVerticalS) var(--spacingHorizontalS);
       color: var(--colorNeutral5);
       font-size: var(--fontSizeBase500);
       letter-spacing: 0.05rem;
       cursor: pointer;
       text-decoration:none;
+      @media screen and (min-width: 821px) {
+        padding: var(--spacingVerticalM) var(--spacingHorizontalM);
+      }
     }
     a:hover{
         color:var(--colorNeutral5);
@@ -64,12 +74,16 @@ const NavStyled = styled.header`
       color:var(--colorNeutral5);
       text-decoration:none;
     }
-    a:focus{
+    a:focus-visible{
       box-shadow: 0 0 0 1px var(--colorNeutral2);
     }
-    a[aria-current="page"]{
+    a[aria-current="page"],
+    a[aria-current="page"]:hover,
+    a:hover{
+      // color:var(--themeMedium);
+      box-shadow: none;
       span{
-        box-shadow: inset 0 var(--underlineLight) 0 0 var(--colorNeutral2);
+        box-shadow: inset 0 var(--underlineLight) 0 0 var(--themeLight);
       }
       &:focus{
         box-shadow: 0 0 0 1px var(--colorNeutral2);

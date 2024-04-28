@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import get from "lodash/get"
 
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -15,9 +16,11 @@ const AboutPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title="About the farm"
+        title={props.data.contentfulPages.title}
         background={heroImage}
-        position="0"
+        position="-10%"
+        height="40vh"
+        className="small"
       />
       <Article>
         {renderRichText(page.content)}
@@ -27,6 +30,13 @@ const AboutPage = (props) => {
 }
 
 export default AboutPage
+
+export const Head = (props) => (
+  <SEO 
+    title={props.data.contentfulPages.title} 
+    description={props.data.contentfulPages.description.description}>
+  </SEO>
+)
 
 export const pageQuery = graphql`
   query AboutQuery {

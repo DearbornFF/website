@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import get from "lodash/get"
 
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -15,8 +16,9 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title="Organic produce and pumpkin patch"
+        title={props.data.contentfulPages.title}
         background={heroImage}
+        height="60vh"
         position="0"
       />
       <Article>
@@ -28,10 +30,18 @@ const IndexPage = (props) => {
 
 export default IndexPage
 
+export const Head = (props) => (
+  <SEO 
+    title={props.data.contentfulPages.title} 
+    description={props.data.contentfulPages.description.description}>
+  </SEO>
+)
+
 export const pageQuery = graphql`
   query IndexQuery {
     site {
       siteMetadata {
+        siteName
         title
         description
         siteUrl
