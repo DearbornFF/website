@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
+import Column from "../components/column"
 
 import heroImage from "../assets/images/395939470_296683159914976_6925436787656827298_n.jpg"
 
@@ -23,7 +24,9 @@ const EducationPage = (props) => {
         className="small"
       />
       <Article>
-        {renderRichText(page.content)}
+        <Column flex="1 0 0">
+          {renderRichText(page.content)}
+        </Column>
       </Article>
     </Layout>
   )

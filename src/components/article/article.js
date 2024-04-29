@@ -2,9 +2,11 @@ import * as React from "react"
 import styled from "styled-components"
 
 const ArticleStyled = styled.article`
-  margin: 0 auto var(--spacingHorizontalXXXL);
+  display:flex;
+  flex-flow: row wrap;
+  gap: var(--spacingHorizontalXXXL);
+  margin: 0 var(--spacingHorizontalXXXL) var(--spacingHorizontalXXXL);
   padding: var(--spacingHorizontalXXL) var(--spacingHorizontalXXXL) var(--spacingHorizontalXXXL);
-  width: 90%;
   h2{
       font-size: var(--fontSizeHero1000);
       margin-top: var(--spacingVerticalXL);

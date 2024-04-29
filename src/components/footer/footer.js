@@ -12,16 +12,19 @@ const FooterStyled = styled.footer`
   max-width: var(--maxWidth);
   color: var(--colorNeutral3);
   font-size: var(--fontSizeBase400);
-  a{
-    color: var(--colorNeutral3);
-  }
   div.left{
     text-align:left;
     width:50%;
+    a{
+      color: var(--colorNeutral4);
+    }
   }
   div.right{
     text-align:right;
     width:50%;
+    a{
+      color: var(--colorNeutral1);
+    }
   }
   z-index:1;
 `;
@@ -33,7 +36,7 @@ const Footer = (props) => {
   return (
     <FooterStyled>
         <div className="left">&copy; {year} {siteName}</div>
-        <div className="right"><Link to="https://130public.net">Designed with 🫐</Link></div>
+        <div className="right"><Link to="https://130public.net">Designed in Snohomish</Link></div>
     </FooterStyled>
   )
 }

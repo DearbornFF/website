@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
+import Column from "../components/column"
 
 import heroImage from "../assets/images/395934394_296682676581691_2741712652337783543_n.jpg"
 
@@ -22,7 +23,9 @@ const IndexPage = (props) => {
         position="0"
       />
       <Article>
-        {renderRichText(page.content)}
+        <Column flex="1 0 0">
+          {renderRichText(page.content)}
+        </Column>
       </Article>
     </Layout>
   )

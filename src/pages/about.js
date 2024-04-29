@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
+import Column from "../components/column"
 
 import heroImage from "../assets/images/396056459_296683003248325_2332290033367886716_n.jpg"
 
@@ -23,7 +24,9 @@ const AboutPage = (props) => {
         className="small"
       />
       <Article>
-        {renderRichText(page.content)}
+        <Column flex="1 0 0">
+          {renderRichText(page.content)}
+        </Column>
       </Article>
     </Layout>
   )
@@ -45,11 +48,6 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
-      }
-    }
-    contentfulOperatingDetails(hours: {children: {}}) {
-      hours {
-        hours
       }
     }
     contentfulPages(slug: { eq: "about" }) {
