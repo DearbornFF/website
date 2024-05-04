@@ -30,10 +30,21 @@ const ArticleStyled = styled.article`
   h3+p{
       margin-top: var(--spacingVerticalXXXL);
   }
+  h3+h4{
+    margin: var(--spacingVerticalXXXL) 0 0;
+  }
   h4{
-    margin-top: var(--spacingVerticalXL);
+    margin: var(--spacingVerticalXXL) 0 0;
+    padding: var(--spacingVerticalXXL) 0 0;
     font-size: var(--fontSizeHero800);
+    font-weight: 400;
     color: var(--colorNeutral4);
+    text-align: left;
+    border-top: var(--strokeWidthThin) solid var(--colorNeutral1);
+  }
+  h4+p{
+      margin-top: var(--spacingVerticalXL);
+      margin-bottom: 0;
   }
   p{margin-top: var(--spacingVerticalL);}
   blockquote{

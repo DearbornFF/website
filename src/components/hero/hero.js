@@ -39,8 +39,9 @@ const HeroStyled = styled.div`
     }
     @media screen and (min-width: 821px) {
       height: ${(props) => props.height};
+      padding: 0 var(--spacingHorizontalXXL);
       h1{
-        font-size: var(--fontSizeHero1200);
+        font-size: var(--fontSizeHero1100);
       }
       &.small{
         height: 40vh;
