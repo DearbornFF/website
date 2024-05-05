@@ -2,7 +2,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import get from "lodash/get"
-import styled from 'styled-components'
+
+import renderOptions from "../hooks/render-options"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -20,18 +21,19 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title={props.data.contentfulPages.title}
+        title={<span>Organic produce <br/> and pumpkin patch</span>}
         background={heroImage}
         height="60vh"
         position="0"
       />
       <Article>
         <Column flex="4 0 0">
-        {renderRichText(page.content)}
+        {renderRichText(page.content, renderOptions)};
         </Column>
         <Sidebar>
           <p><strong>Hours</strong> {details.hours.hours}</p>
-          <p><strong>Location</strong> {details.location}</p>
+          <p><strong>Address</strong> {details.location}</p>
+          <p><strong>Parking</strong> {details.parking.parking}</p>
           {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
         </Sidebar>
       </Article>
@@ -63,13 +65,18 @@ export const pageQuery = graphql`
         hours
       }
       location
+      parking {
+        parking
+      }
       visitRecommendations{
         visitRecommendations
       }
     }
     contentfulPages(slug: { eq: "home" }) {
-      title
       label
+      header{
+        header
+      }
       description {
         description
       }

@@ -1,6 +1,8 @@
 import * as React from "react"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import styled from "styled-components"
 
+import renderOptions from "../../hooks/render-options"
 
 const HeroStyled = styled.div`
     overflow: hidden;

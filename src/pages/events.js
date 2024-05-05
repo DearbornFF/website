@@ -39,7 +39,7 @@ const EventPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title={props.data.contentfulPages.title}
+        title={props.data.contentfulPages.header.header}
         background={heroImage}
         position="-20%"
         height="40vh"
@@ -75,8 +75,10 @@ export const pageQuery = graphql`
       }
     }
     contentfulPages(slug: { eq: "events" }) {
-      title
       label
+      header{
+        header
+      }
       description {
         description
       }

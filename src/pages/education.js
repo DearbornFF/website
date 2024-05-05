@@ -17,7 +17,7 @@ const EducationPage = (props) => {
   return (
     <Layout>
       <Hero 
-        title={props.data.contentfulPages.title}
+        title={props.data.contentfulPages.header.header}
         background={heroImage}
         position='-10%'
         height="40vh"
@@ -51,8 +51,10 @@ export const pageQuery = graphql`
       }
     }
     contentfulPages(slug: { eq: "education" }) {
-      title
       label
+      header{
+        header
+      }
       description {
         description
       }
