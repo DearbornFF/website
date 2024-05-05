@@ -11,26 +11,9 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
+import Sidebar from "../components/sidebar"
 
 import heroImage from "../assets/images/396175471_296682689915023_8972487937204021691_n.jpg"
-
-const RightColumn = styled(Column)`
-  font-size: var(--fontSizeBase300);
-  padding: var(--spacingHorizontalXXL) var(--spacingHorizontalXL) 0 var(--spacingHorizontalXXL);
-  border-left: var(--strokeWidthThin) solid var(--colorNeutral1);
-  p{
-    margin: 0 0 var(--spacingHorizontalXXXL);
-    padding:0;
-  }
-  strong{
-    display:block;
-    padding-bottom: var(--spacingHorizontalS);
-    color: var(--themeMedium);
-    font-size: var(--fontSizeBase600);
-    font-family: var(--fontFamilyHeading);
-    font-weight:400;
-  }
-`;
 
 const DirectionsPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
@@ -49,11 +32,12 @@ const DirectionsPage = (props) => {
         <Column flex="4 0 0">
           {renderRichText(page.content, renderOptions)};
         </Column>
-        <Column as={RightColumn} flex="1 0 0">
+        <Sidebar>
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
-        </Column>
+          {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
+        </Sidebar>
       </Article>
     </Layout>
   )

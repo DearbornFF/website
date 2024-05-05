@@ -8,12 +8,14 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
+import Sidebar from "../components/sidebar"
 
 import heroImage from "../assets/images/396056459_296683003248325_2332290033367886716_n.jpg"
 
 const AboutPage = (props) => {
   const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const page = get(props, 'data.contentfulPages');
+  const details = get(props, 'data.contentfulOperatingDetails');
   return (
     <Layout>
       <Hero 
@@ -24,9 +26,15 @@ const AboutPage = (props) => {
         className="small"
       />
       <Article>
-        <Column flex="1 0 0">
+        <Column flex="4 0 0">
           {renderRichText(page.content)}
         </Column>
+        <Sidebar>
+          <p><strong>Hours</strong> {details.hours.hours}</p>
+          <p><strong>Address</strong> {details.location}</p>
+          <p><strong>Parking</strong> {details.parking.parking}</p>
+          {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
+        </Sidebar>
       </Article>
     </Layout>
   )
@@ -48,6 +56,18 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
+      }
+    }
+    contentfulOperatingDetails{
+      hours {
+        hours
+      }
+      location
+      parking {
+        parking
+      }
+      visitRecommendations{
+        visitRecommendations
       }
     }
     contentfulPages(slug: { eq: "about" }) {

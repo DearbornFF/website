@@ -10,7 +10,6 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
-import Sidebar from "../components/sidebar"
 
 import heroImage from "../assets/images/395934394_296682676581691_2741712652337783543_n.jpg"
 
@@ -27,15 +26,9 @@ const IndexPage = (props) => {
         position="0"
       />
       <Article>
-        <Column flex="4 0 0">
+        <Column flex="1 0 0">
         {renderRichText(page.content, renderOptions)};
         </Column>
-        <Sidebar>
-          <p><strong>Hours</strong> {details.hours.hours}</p>
-          <p><strong>Address</strong> {details.location}</p>
-          <p><strong>Parking</strong> {details.parking.parking}</p>
-          {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
-        </Sidebar>
       </Article>
     </Layout>
   )
