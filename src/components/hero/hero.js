@@ -9,6 +9,7 @@ const HeroStyled = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+    min-height:280px;
     height: 30vh;
     &.small{
       height: 30vh;
@@ -18,12 +19,12 @@ const HeroStyled = styled.div`
         opacity: 0.5;
         position: absolute;
         margin-top: 0;
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
         z-index:0;
-        @media screen and (min-width: 821px) {
-          width: 100%;
-          height: auto;
+        @media screen and (min-height: 1360px) {
+          width: auto;
+          height: 100%;
           margin-top: ${(props) => props.position};
         }
     }
