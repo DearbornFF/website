@@ -1,27 +1,27 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import get from "lodash/get"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
+import Column from "../components/column"
 
 import heroImage from "../assets/images/395825912_296679093248716_2687186518643641950_n.jpg"
 
 const FourOhFourPage = (props) => {
-  const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
-  const details = get(props, 'data.contentfulOperatingDetails');
   return (
     <Layout>
       <Hero 
-        title="Woops"
+        title="Page not found"
         background={heroImage}
         height="60vh"
         position="0"
       />
       <Article>
-        ...
+        <Column flex="1 0 0">
+          <h2>That's a 404 error. The requested page was not found.</h2>
+        </Column>
       </Article>
     </Layout>
   )

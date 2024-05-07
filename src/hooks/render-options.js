@@ -7,4 +7,4 @@ const renderOptions = {
       }, []);
     },
   };
-export {renderOptions};
+export default renderOptions;

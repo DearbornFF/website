@@ -35,7 +35,6 @@ const PageStyling = styled.div`
 `;
 
 const EventPage = (props) => {
-  const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const page = get(props, 'data.contentfulPages');
   const details = get(props, 'data.contentfulOperatingDetails');
   return (
@@ -57,7 +56,6 @@ const EventPage = (props) => {
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
-          {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
         </Sidebar>
       </Article>
     </Layout>
@@ -75,13 +73,6 @@ export const Head = (props) => (
 
 export const pageQuery = graphql`
   query EventQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
     contentfulOperatingDetails{
       hours {
         hours
@@ -89,9 +80,6 @@ export const pageQuery = graphql`
       location
       parking {
         parking
-      }
-      visitRecommendations{
-        visitRecommendations
       }
     }
     contentfulPages(slug: { eq: "events" }) {

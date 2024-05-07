@@ -13,7 +13,6 @@ import Sidebar from "../components/sidebar"
 import heroImage from "../assets/images/395939470_296683159914976_6925436787656827298_n.jpg"
 
 const EducationPage = (props) => {
-  const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const page = get(props, 'data.contentfulPages');
   const details = get(props, 'data.contentfulOperatingDetails');
   return (
@@ -33,7 +32,6 @@ const EducationPage = (props) => {
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
-          {/* <p><strong>For your visit</strong> {details.visitRecommendations.visitRecommendations}</p> */}
         </Sidebar>
       </Article>
     </Layout>
@@ -51,13 +49,6 @@ export const Head = (props) => (
 
 export const pageQuery = graphql`
   query EducationQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
     contentfulOperatingDetails{
       hours {
         hours
@@ -65,9 +56,6 @@ export const pageQuery = graphql`
       location
       parking {
         parking
-      }
-      visitRecommendations{
-        visitRecommendations
       }
     }
     contentfulPages(slug: { eq: "education" }) {

@@ -14,9 +14,7 @@ import Column from "../components/column"
 import heroImage from "../assets/images/395934394_296682676581691_2741712652337783543_n.jpg"
 
 const IndexPage = (props) => {
-  const {title, description, siteUrl} = get(props, 'data.site.siteMetadata');
   const page = get(props, 'data.contentfulPages');
-  const details = get(props, 'data.contentfulOperatingDetails');
   return (
     <Layout>
       <Hero 
@@ -45,26 +43,6 @@ export const Head = (props) => (
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site {
-      siteMetadata {
-        siteName
-        title
-        description
-        siteUrl
-      }
-    }
-    contentfulOperatingDetails{
-      hours {
-        hours
-      }
-      location
-      parking {
-        parking
-      }
-      visitRecommendations{
-        visitRecommendations
-      }
-    }
     contentfulPages(slug: { eq: "home" }) {
       label
       header{
