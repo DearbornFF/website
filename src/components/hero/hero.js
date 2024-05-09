@@ -18,14 +18,13 @@ const HeroStyled = styled.div`
     .bg {
         opacity: 0.5;
         position: absolute;
-        margin-top: 0;
+        margin-top: ${(props) => props.position};
         width: 100%;
         height: auto;
         z-index:0;
-        @media screen and (min-height: 1360px) {
+        @media screen and (min-height: 1023px) {
           width: auto;
           height: 100%;
-          margin-top: ${(props) => props.position};
         }
     }
     h1{
