@@ -40,7 +40,6 @@ const ArticleStyled = styled.article`
     font-weight: 400;
     color: var(--colorNeutral4);
     text-align: left;
-    border-top: var(--strokeWidthThin) solid var(--colorNeutral1);
   }
   h4+p{
       margin-top: var(--spacingVerticalXL);
