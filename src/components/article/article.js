@@ -68,6 +68,12 @@ const ArticleStyled = styled.article`
   }
   ul{}
   li{}
+  a,a:visited{
+    box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--themeLight);
+  }
+  a:hover{
+    box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--themeDark);
+  }
 `;
 
 const Article = (props) => {

@@ -91,14 +91,14 @@ u{
     box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--themeLight);
     text-decoration: none;
 }
-a{
+a, a:visited{
     color: var(--themeDark);
     text-decoration: none;
 }
 a:hover{
     color: var(--themeDark);
     text-decoration: none;
-    box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--themeLight);
+    box-shadow: inset 0 var(--underlineHeavy) 0 0 var(--themeDark);
 }
 a:focus{
     outline-style: none;
