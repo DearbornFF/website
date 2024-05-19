@@ -9,7 +9,7 @@ const FooterStyled = styled.footer`
   flex-wrap: wrap;
   margin: var(--spacingVerticalXL) 0 var(--spacingVerticalXL);
   max-width: var(--maxWidth);
-  color: var(--colorNeutral3);
+  color: var(--colorNeutral4);
   font-size: var(--fontSize400);
   a{
     color: var(--colorNeutral4);
