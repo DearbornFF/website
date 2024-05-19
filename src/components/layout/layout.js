@@ -38,6 +38,10 @@ const Huckle = styled.div`
   right: -120px;
   opacity:0.5;
   z-index: 0;
+  img{width:200px;}
+  @media screen and (min-width: 821px) {
+    img{width:500px;}
+  }
 `;
 
 const Pump = styled.div`
@@ -46,6 +50,10 @@ const Pump = styled.div`
   left: -120px;
   opacity:1;
   z-index: 0;
+  img{width:200px;}
+  @media screen and (min-width: 821px) {
+    img{width:600px;}
+  }
 `;
 
 const Layout = (props) => {
@@ -59,10 +67,10 @@ const Layout = (props) => {
         </Content>
         <Footer />
         <Huckle>
-            <img src={HuckleImage} alt="" width="500"/>
+            <img src={HuckleImage} alt=""/>
         </Huckle>
         <Pump>
-            <img src={PumpImage} alt="" width="600"/>
+            <img src={PumpImage} alt=""/>
         </Pump>
     </Container>
   )
