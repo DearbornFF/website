@@ -29,6 +29,8 @@ const FBLink = styled(Link)`
     svg{
       .bg{color: var(--themeDark);}
     }
+    text-decoration:none;
+    box-shadow: none;
   }
   @media screen and (min-width: 640px) {
     padding:24px;
@@ -105,9 +107,6 @@ const NavStyled = styled.header`
     a:visited{
       color:var(--colorNeutral5);
       text-decoration:none;
-    }
-    a:focus-visible{
-      box-shadow: 0 0 0 1px var(--colorNeutral2);
     }
     a[aria-current="page"],
     a[aria-current="page"]:hover,
