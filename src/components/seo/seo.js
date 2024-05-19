@@ -22,6 +22,8 @@ export const Seo = ({ siteName, title, description, pathname, children }) => {
     <>
         <title>{Seo.siteName} - {Seo.title}</title>
         <meta name="description" content={Seo.description} />
+        <link rel="canonical" href={Seo.url} data-baseprotocol="https:" data-
+basehost={siteUrl}></link>
         {children}
         <script type="application/ld+json">{`
           {

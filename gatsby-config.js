@@ -27,11 +27,17 @@ module.exports = {
   }, {
     resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.dearbornfamilyfarm.com',
+        host: 'https://dearbornfamilyfarm.com',
         sitemap: 'https://dearbornfamilyfarm.com/sitemap-0.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
-  },{
+  }, {
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl: `https://dearbornfamilyfarm.com`,
+      stripQueryString: true
+    }
+  }, {
     resolve: "gatsby-plugin-google-tagmanager",
     options: {
       id: process.env.GTM_TAG_ID,
