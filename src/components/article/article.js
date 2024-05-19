@@ -34,8 +34,8 @@ const ArticleStyled = styled.article`
     margin: var(--spacingVerticalXXXL) 0 0;
   }
   h4{
-    margin: var(--spacingVerticalXXL) 0 0;
-    padding: var(--spacingVerticalXXL) 0 0;
+    margin: 0 0 0;
+    padding: 0 0 0;
     font-size: var(--fontSizeHero800);
     font-weight: 400;
     color: var(--colorNeutral4);
@@ -58,9 +58,8 @@ const ArticleStyled = styled.article`
     }
   }
   hr{
-    margin: 3rem auto;
+    margin: 2rem auto 1.5rem;
     height: 1px;
-    width:70%;
     border: 0;
     color: var(--colorNeutral1);
     background-color: var(--colorNeutral1);
