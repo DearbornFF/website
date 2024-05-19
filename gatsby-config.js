@@ -8,7 +8,7 @@ module.exports = {
     siteName: "Dearborn Family Farm",
     title: "Organic produce and pumpkin patch",
     description: "We offer plant starts, seasonal organic produce, huckleberry goods, fall pumpkin patch, corn maze and holiday events",
-    siteUrl: "https://www.dearbornfamilyfarm.com"
+    siteUrl: "https://dearbornfamilyfarm.com"
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", 
   {

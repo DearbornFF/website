@@ -30,10 +30,13 @@ const FourOhFourPage = (props) => {
 export default FourOhFourPage
 
 export const Head = (props) => (
-  <Seo 
-    title="404"
-    description="Page missing">
-  </Seo>
+  <>
+    <html lang="en" />
+    <Seo 
+      title="404"
+      description="Page missing">
+    </Seo>
+  </>
 )
 
 export const pageQuery = graphql`

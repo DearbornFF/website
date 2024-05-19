@@ -45,10 +45,13 @@ const DirectionsPage = (props) => {
 export default DirectionsPage
 
 export const Head = (props) => (
-  <Seo 
-    title={props.data.contentfulPages.title} 
-    description={props.data.contentfulPages.description.description}>
-  </Seo>
+  <>
+    <html lang="en" />
+    <Seo 
+      title={props.data.contentfulPages.title} 
+      description={props.data.contentfulPages.description.description}>
+    </Seo>
+  </>
 )
 
 export const pageQuery = graphql`
