@@ -20,6 +20,24 @@ module.exports = {
       }
   },
   {
+    resolve: `gatsby-plugin-google-gtag`,
+    options: {
+      trackingIds: [
+        process.env.GA_TRACKING_ID,
+      ],
+      gtagConfig: {
+        optimize_id: process.env.GT_CONTAINER_ID,
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
+      pluginConfig: {
+        head: false,
+        respectDNT: true,
+        delayOnRouteUpdate: 0,
+      },
+    },
+  },
+  {
     resolve: 'gatsby-source-contentful',
     options: {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
