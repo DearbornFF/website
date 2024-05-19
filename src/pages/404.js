@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -30,10 +30,10 @@ const FourOhFourPage = (props) => {
 export default FourOhFourPage
 
 export const Head = (props) => (
-  <SEO 
+  <Seo 
     title="404"
     description="Page missing">
-  </SEO>
+  </Seo>
 )
 
 export const pageQuery = graphql`

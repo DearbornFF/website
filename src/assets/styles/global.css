@@ -25,7 +25,7 @@
 }
 @media screen and (max-width: 821px) {
     :root {
-        --maxWidth: 98vw;
+        --maxWidth: 95vw;
         --font-size: clamp(.875rem,.4626rem + 1.0309vw + var(--user-font-scale),1.125rem);
     }
 }
@@ -60,16 +60,12 @@ h1,h2,h3{
     margin-bottom:0;
     padding:0;
 }
-h1{
-    font-size: var(--fontSizeBase1000);
-}
+h1{}
 h2{
-    font-size: var(--fontSizeHero900);
     margin-top: var(--spacingVerticalXXS);
     font-weight: 100;
 }
 h3{
-    font-size: var(--fontSizeHero800);
     margin-top: var(--spacingVerticalL);
     font-weight: 400;
     color: var(--themeDark);
@@ -80,11 +76,10 @@ h3+p{
 p{
     margin: var(--spacingVerticalXXL) 0 0;
     padding: 0;
-    font-size: var(--fontSizeBase500);
     text-align: left;
 }
 
-quote{
+blockquote{
     padding:0;
 }
 u{

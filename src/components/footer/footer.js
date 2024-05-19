@@ -1,7 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components'
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
-import { Link } from "gatsby"
 
 const FooterStyled = styled.footer`
   display:flex;
@@ -11,7 +10,7 @@ const FooterStyled = styled.footer`
   margin: var(--spacingVerticalXL) 0 var(--spacingVerticalXL);
   max-width: var(--maxWidth);
   color: var(--colorNeutral3);
-  font-size: var(--fontSizeBase400);
+  font-size: var(--fontSize400);
   div.left{
     text-align:left;
     width:50%;
@@ -36,7 +35,7 @@ const Footer = (props) => {
   return (
     <FooterStyled>
         <div className="left">&copy; {year} {siteName}</div>
-        <div className="right"><Link to="https://130public.net">Designed in Snohomish</Link></div>
+        <div className="right"></div>
     </FooterStyled>
   )
 }

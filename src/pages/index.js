@@ -5,7 +5,7 @@ import get from "lodash/get"
 
 import renderOptions from "../hooks/render-options"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -25,7 +25,7 @@ const IndexPage = (props) => {
       />
       <Article>
         <Column flex="1 0 0">
-        {renderRichText(page.content, renderOptions)};
+        {renderRichText(page.content, renderOptions)}
         </Column>
       </Article>
     </Layout>
@@ -35,10 +35,10 @@ const IndexPage = (props) => {
 export default IndexPage
 
 export const Head = (props) => (
-  <SEO 
+  <Seo 
     title={props.data.contentfulPages.title} 
     description={props.data.contentfulPages.description.description}>
-  </SEO>
+  </Seo>
 )
 
 export const pageQuery = graphql`

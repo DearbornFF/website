@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import get from "lodash/get"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -32,6 +32,7 @@ const AboutPage = (props) => {
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
+          <p><strong><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></strong></p>
         </Sidebar>
       </Article>
     </Layout>
@@ -41,10 +42,10 @@ const AboutPage = (props) => {
 export default AboutPage
 
 export const Head = (props) => (
-  <SEO 
+  <Seo 
     title={props.data.contentfulPages.title} 
     description={props.data.contentfulPages.description.description}>
-  </SEO>
+  </Seo>
 )
 
 export const pageQuery = graphql`

@@ -4,7 +4,7 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import styled from 'styled-components'
 import get from "lodash/get"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
@@ -19,18 +19,8 @@ const PageStyling = styled.div`
     padding: var(--spacingVerticalM) 0 0;
     text-align:left;
   }
-  h2{
-    font-size: var(--fontSizeHero900);
-  }
-  h3{
-    font-size: var(--fontSizeHero700);
-  }
   h3+p {
     margin-top: var(--spacingVerticalXL);
-  }
-  hr{
-    margin: var(--spacingVerticalXXXL) 0 var(--spacingVerticalL);
-    width:100%;
   }
 `;
 
@@ -42,7 +32,7 @@ const EventPage = (props) => {
       <Hero 
         title={props.data.contentfulPages.header.header}
         background={heroImage}
-        position="-20%"
+        position="-25%"
         height="40vh"
         className="small"
       />
@@ -56,6 +46,7 @@ const EventPage = (props) => {
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
+          <p><strong><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></strong></p>
         </Sidebar>
       </Article>
     </Layout>
@@ -65,10 +56,10 @@ const EventPage = (props) => {
 export default EventPage
 
 export const Head = (props) => (
-  <SEO 
+  <Seo 
     title={props.data.contentfulPages.title} 
     description={props.data.contentfulPages.description.description}>
-  </SEO>
+  </Seo>
 )
 
 export const pageQuery = graphql`

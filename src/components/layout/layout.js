@@ -50,10 +50,6 @@ const Pump = styled.div`
 
 const Layout = (props) => {
 
-  const selectedTheme = () => {
-    return "goop";
-  }
-
   return (
     <Container>
         <Content>
@@ -63,10 +59,10 @@ const Layout = (props) => {
         </Content>
         <Footer />
         <Huckle>
-            <img src={HuckleImage} width="500"/>
+            <img src={HuckleImage} alt="" width="500"/>
         </Huckle>
         <Pump>
-            <img src={PumpImage} width="600"/>
+            <img src={PumpImage} alt="" width="600"/>
         </Pump>
     </Container>
   )

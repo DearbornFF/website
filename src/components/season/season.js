@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Season = (props) => {
   const [season, setSeason] = useState("winter");
@@ -23,6 +23,6 @@ const Season = (props) => {
     setSeason(seasonString);
     document.querySelector("body").setAttribute('class', `${season}`);
     document.querySelector(":root").style.setProperty('--themeSeason', `"${season}"`);
-  });
+  }, [seasonString, season]);
 }
 export default Season;

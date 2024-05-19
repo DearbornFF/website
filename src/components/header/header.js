@@ -12,7 +12,7 @@ const HeaderStyled = styled.header`
     }
 `;
 const NavStyled = styled.header`
-    padding:0 var(--spacingHorizontalM) var(--spacingVerticalXXL);
+    padding:0 var(--spacingHorizontalM) var(--spacingVerticalM);
     ul{
       margin:0;
       padding:0;
@@ -31,6 +31,9 @@ const NavStyled = styled.header`
     }
     li:nth-child(1) { 
       flex: 2 2 100%;
+    }
+    @media screen and (min-width: 821px) {
+      padding:0 var(--spacingHorizontalM) var(--spacingVerticalXXL);
     }
     @media screen and (min-width: 1280px) {
       padding:0 var(--spacingHorizonalXXXL) var(--spacingVerticalXXL);
@@ -56,9 +59,9 @@ const NavStyled = styled.header`
     }
     a{
       display: inline-block;
-      padding: var(--spacingVerticalS) var(--spacingHorizontalS);
+      padding: var(--spacingVerticalXS) var(--spacingHorizontalS);
       color: var(--colorNeutral5);
-      font-size: var(--fontSizeBase500);
+      font-size: var(--fontSize500);
       letter-spacing: 0.05rem;
       cursor: pointer;
       text-decoration:none;
@@ -93,7 +96,7 @@ const NavStyled = styled.header`
       }
     }
     .logo{
-      img{width:18rem;}
+      img{width:12rem;}
       a,a[aria-current="page"]{
         span{
           box-shadow:none;
@@ -102,7 +105,9 @@ const NavStyled = styled.header`
           box-shadow: 0 0 0 1px var(--colorNeutral2);
         }
       }
-      
+      @media screen and (min-width: 821px) {
+        img{width:18rem;}
+      }
     }
 `;
 
@@ -111,7 +116,7 @@ const Header = (props) => {
     <HeaderStyled>
         <NavStyled>
             <ul>
-                <li className="logo"><Link to="/"><span><img src={NameImage}/></span></Link></li>
+                <li className="logo"><Link to="/"><span><img src={NameImage} alt="Dearborn Family Farm"/></span></Link></li>
                 <li><Link to="/about"><span>About the farm</span></Link></li>
                 <li><Link to="/directions"><span>Contact & directions</span></Link></li>
                 <li><Link to="/events"><span>Upcoming events</span></Link></li>
