@@ -12,6 +12,14 @@ module.exports = {
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", 
   {
+    resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.dearbornfamilyfarm.com',
+        sitemap: 'https://dearbornfamilyfarm.com/sitemap-0.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+  },
+  {
     resolve: 'gatsby-source-contentful',
     options: {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
