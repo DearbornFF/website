@@ -31,26 +31,15 @@ module.exports = {
         sitemap: 'https://dearbornfamilyfarm.com/sitemap-0.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
-  },
-  {
-    resolve: "gatsby-plugin-google-gtag",
+  },{
+    resolve: "gatsby-plugin-google-tagmanager",
     options: {
-      trackingIds: [
-        process.env.GA_TRACKING_ID,
-      ],
-      gtagConfig: {
-        optimize_id: process.env.GT_CONTAINER_ID,
-        anonymize_ip: true,
-        cookie_expires: 0,
-      },
-      pluginConfig: {
-        head: false,
-        respectDNT: true,
-        delayOnRouteUpdate: 0,
-      },
+      id: "GTM_TAG_ID",
+      includeInDevelopment: false,
+      defaultDataLayer: { platform: "gatsby" },
+      enableWebVitalsTracking: true
     },
-  },
-  {
+  }, {
     resolve: 'gatsby-source-contentful',
     options: {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
