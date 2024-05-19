@@ -1,17 +1,30 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-require('dotenv').config({path: `./.env`})
+require('dotenv').config({path: "./.env"})
 ; 
 module.exports = {
   siteMetadata: {
-    siteName: `Dearborn Family Farm`,
-    title: `Organic produce and pumpkin patch`,
-    description: `goo`,
-    siteUrl: `https://www.dearbornfamilyfarm.com`
+    siteName: "Dearborn Family Farm",
+    title: "Organic produce and pumpkin patch",
+    description: "We offer plant starts, seasonal organic produce, huckleberry goods, fall pumpkin patch, corn maze and holiday events",
+    siteUrl: "https://www.dearbornfamilyfarm.com"
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", 
   {
+    resolve: 'gatsby-plugin-manifest',
+    options: {
+      name: "Dearborn Family Farm and Pumpkin Patch",
+      short_name: "Dearborn Family Farm",
+      description: "We offer plant starts, seasonal organic produce, huckleberry goods, fall pumpkin patch, corn maze and holiday events.",
+      lang: "en",
+      display: "standalone",
+      icon: "src/assets/graphx/icon.png",
+      start_url: "/",
+      background_color: "#91c19f",
+      theme_color: "#3a5e45"
+    }
+  }, {
     resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.dearbornfamilyfarm.com',
@@ -20,7 +33,7 @@ module.exports = {
       }
   },
   {
-    resolve: `gatsby-plugin-google-gtag`,
+    resolve: "gatsby-plugin-google-gtag",
     options: {
       trackingIds: [
         process.env.GA_TRACKING_ID,
@@ -42,11 +55,6 @@ module.exports = {
     options: {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
       "spaceId": process.env.CONTENTFUL_SPACEID
-    }
-  }, {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/assets/graphx/icon.png"
     }
   }, {
     resolve: 'gatsby-source-filesystem',
