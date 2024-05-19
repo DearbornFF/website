@@ -37,7 +37,7 @@ const Huckle = styled.div`
   right: -120px;
   opacity:0.5;
   z-index: 0;
-  img{width:200px;}
+  img{width:250px;}
   @media screen and (min-width: 821px) {
     img{width:500px;}
   }
@@ -45,12 +45,13 @@ const Huckle = styled.div`
 
 const Pump = styled.div`
   position: fixed;
-  bottom: -120px;
+  bottom: -50px;
   left: -120px;
   opacity:1;
   z-index: 0;
-  img{width:200px;}
+  img{width:250px;}
   @media screen and (min-width: 821px) {
+    bottom: -120px;
     img{width:600px;}
   }
 `;

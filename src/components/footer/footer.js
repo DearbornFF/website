@@ -11,19 +11,8 @@ const FooterStyled = styled.footer`
   max-width: var(--maxWidth);
   color: var(--colorNeutral3);
   font-size: var(--fontSize400);
-  div.left{
-    text-align:left;
-    width:50%;
-    a{
-      color: var(--colorNeutral4);
-    }
-  }
-  div.right{
-    text-align:right;
-    width:50%;
-    a{
-      color: var(--colorNeutral1);
-    }
+  a{
+    color: var(--colorNeutral4);
   }
   z-index:1;
 `;
@@ -34,8 +23,7 @@ const Footer = (props) => {
   const year = today.getFullYear();
   return (
     <FooterStyled>
-        <div className="left">&copy; {year} {siteName}</div>
-        <div className="right"></div>
+        &copy; {year} {siteName}
     </FooterStyled>
   )
 }
