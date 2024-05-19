@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const HeroStyled = styled.div`
     overflow: hidden;
@@ -58,7 +59,7 @@ const Hero = (props) => {
   return (
     <HeroStyled position={props.position} height={props.height} className={props.className}>
         <h1>{props.title}</h1>
-        <img src={props.background} className="bg" alt="" />
+        <GatsbyImage image={props.background} className="bg" alt="" />
     </HeroStyled>
   )
 }

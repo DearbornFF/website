@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { getImage } from "gatsby-plugin-image"
 import get from "lodash/get"
 
 import Seo from "../components/seo"
@@ -10,11 +11,10 @@ import Article from "../components/article"
 import Column from "../components/column"
 import Sidebar from "../components/sidebar"
 
-import heroImage from "../assets/images/396056459_296683003248325_2332290033367886716_n.jpg"
-
 const AboutPage = (props) => {
   const page = get(props, 'data.contentfulPages');
   const details = get(props, 'data.contentfulOperatingDetails');
+  const heroImage = getImage(props.data.file);
   return (
     <Layout>
       <Hero 
@@ -31,6 +31,7 @@ const AboutPage = (props) => {
         <Sidebar>
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
+          <p><strong>Contact</strong> <a href="mailto:info@dearbornfamilyfarm.com">info@dearbornfamilyfarm.com</a></p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
           <p><strong><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></strong></p>
         </Sidebar>
@@ -57,6 +58,15 @@ export const pageQuery = graphql`
       location
       parking {
         parking
+      }
+    }
+    file(relativePath: { eq: "396056459_296683003248325_2332290033367886716_n.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO]
+        )
       }
     }
     contentfulPages(slug: { eq: "about" }) {

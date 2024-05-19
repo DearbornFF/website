@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { getImage } from "gatsby-plugin-image"
 import get from "lodash/get"
 
 import renderOptions from "../hooks/render-options"
@@ -11,10 +12,10 @@ import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
 
-import heroImage from "../assets/images/395934394_296682676581691_2741712652337783543_n.jpg"
 
 const IndexPage = (props) => {
   const page = get(props, 'data.contentfulPages');
+  const heroImage = getImage(props.data.file);
   return (
     <Layout>
       <Hero 
@@ -43,6 +44,15 @@ export const Head = (props) => (
 
 export const pageQuery = graphql`
   query IndexQuery {
+    file(relativePath: { eq: "395934394_296682676581691_2741712652337783543_n.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO]
+        )
+      }
+    }
     contentfulPages(slug: { eq: "home" }) {
       label
       header{

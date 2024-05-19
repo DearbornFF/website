@@ -1,12 +1,11 @@
 import * as React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import {Season} from "../season"
 import Header from "../header"
 import Footer from "../footer"
-import HuckleImage from "../../assets/graphx/huckleberries.png"
-import PumpImage from "../../assets/graphx/pumpkins.png"
-
 
 const Container = styled.div`
   position: relative;
@@ -57,7 +56,30 @@ const Pump = styled.div`
 `;
 
 const Layout = (props) => {
-
+  const query = useStaticQuery(graphql`
+    query LayoutQuery {
+      pumpImage: file(relativePath: { eq: "pumpkins.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 600
+            placeholder: BLURRED
+            formats: [AUTO]
+          )
+        }
+      }
+      huckleImage: file(relativePath: { eq: "huckleberries.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 600
+            placeholder: BLURRED
+            formats: [AUTO]
+          )
+        }
+      }
+    }
+  `);
+  const pumpImage = getImage(query.pumpImage);
+  const huckleImage = getImage(query.huckleImage);
   return (
     <Container>
         <Content>
@@ -67,10 +89,10 @@ const Layout = (props) => {
         </Content>
         <Footer />
         <Huckle>
-            <img src={HuckleImage} alt=""/>
+          <GatsbyImage image={huckleImage} alt="" />
         </Huckle>
         <Pump>
-            <img src={PumpImage} alt=""/>
+          <GatsbyImage image={pumpImage} alt="" />
         </Pump>
     </Container>
   )

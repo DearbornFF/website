@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
 
 import Seo from "../components/seo"
 import Layout from "../components/layout"
@@ -7,9 +8,8 @@ import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
 
-import heroImage from "../assets/images/395825912_296679093248716_2687186518643641950_n.jpg"
-
 const FourOhFourPage = (props) => {
+  const heroImage = getImage(props.data.file);
   return (
     <Layout>
       <Hero 
@@ -43,6 +43,15 @@ export const pageQuery = graphql`
         title
         description
         siteUrl
+      }
+    }
+    file(relativePath: { eq: "395825912_296679093248716_2687186518643641950_n.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO]
+        )
       }
     }
     contentfulOperatingDetails(hours: {children: {}}) {

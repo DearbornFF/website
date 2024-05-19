@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { getImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import get from "lodash/get"
 
@@ -10,8 +11,6 @@ import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
 import Sidebar from "../components/sidebar"
-
-import heroImage from "../assets/images/329693658_6036260803100793_7836501218673709703_n.jpg"
 
 const PageStyling = styled.div`
   h2,h3,h4,blockquote{
@@ -27,6 +26,7 @@ const PageStyling = styled.div`
 const EventPage = (props) => {
   const page = get(props, 'data.contentfulPages');
   const details = get(props, 'data.contentfulOperatingDetails');
+  const heroImage = getImage(props.data.file);
   return (
     <Layout>
       <Hero 
@@ -45,6 +45,7 @@ const EventPage = (props) => {
         <Sidebar>
           <p><strong>Hours</strong> {details.hours.hours}</p>
           <p><strong>Address</strong> {details.location}</p>
+          <p><strong>Contact</strong> <a href="mailto:info@dearbornfamilyfarm.com">info@dearbornfamilyfarm.com</a></p>
           <p><strong>Parking</strong> {details.parking.parking}</p>
           <p><strong><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></strong></p>
         </Sidebar>
@@ -71,6 +72,15 @@ export const pageQuery = graphql`
       location
       parking {
         parking
+      }
+    }
+    file(relativePath: { eq: "329693658_6036260803100793_7836501218673709703_n.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO]
+        )
       }
     }
     contentfulPages(slug: { eq: "events" }) {
