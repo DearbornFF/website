@@ -147,7 +147,7 @@ const Header = (props) => {
           gatsbyImageData(
             width: 600
             placeholder: BLURRED
-            formats: [AUTO]
+            formats: [AUTO, WEBP, AVIF]
           )
         }
       }

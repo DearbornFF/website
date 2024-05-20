@@ -10,7 +10,7 @@ module.exports = {
     description: "We offer plant starts, seasonal organic produce, huckleberry goods, fall pumpkin patch, corn maze and holiday events",
     siteUrl: "https://dearbornfamilyfarm.com"
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", 
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", "gatsby-plugin-mdx",
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
@@ -51,6 +51,11 @@ module.exports = {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
       "spaceId": process.env.CONTENTFUL_SPACEID
     }
+  }, {
+    resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    options: {
+      devMode: true,
+    },
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {

@@ -64,7 +64,7 @@ const Layout = (props) => {
           gatsbyImageData(
             width: 600
             placeholder: BLURRED
-            formats: [AUTO]
+            formats: [AUTO, WEBP, AVIF]
           )
         }
       }
@@ -73,7 +73,7 @@ const Layout = (props) => {
           gatsbyImageData(
             width: 600
             placeholder: BLURRED
-            formats: [AUTO]
+            formats: [AUTO, WEBP, AVIF]
           )
         }
       }
