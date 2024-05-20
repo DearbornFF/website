@@ -23,12 +23,13 @@ const Content = styled.main`
   padding: 0;
   min-height: 100vh;
   min-width: var(--maxWidth);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.85);
   z-index: 1;
   @media screen and (min-width: 821px) {
     border-width: 1px;
     border-color: rgba(0,0,0,0.1);
     border-style: solid;
+    background: rgba(255,255,255,0.75);
   }
 `;
 const Huckle = styled.div`
