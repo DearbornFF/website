@@ -46,7 +46,7 @@ export const SidebarSection = styled.div`
     padding:0;
     font-size:var(--fontSize400);
     b,strong{
-      font-weight:600;
+      font-weight:800;
     }
   }
 `;

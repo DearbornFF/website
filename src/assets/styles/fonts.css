@@ -21,10 +21,19 @@
 }
 @font-face {
     font-family: 'Noto Sans';
+    font-stretch: 100%;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400 800;
     font-display: swap;
-    src: url(../fonts/NotoSans-Regular.ttf) format('truetype');
+    src: url(../fonts/NotoSans-Regular-VariableFont.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-stretch: 100%;
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(../fonts/NotoSans-Italic-VariableFont.ttf) format('truetype');
 }
 @font-face {
     font-family: "Atteron";
