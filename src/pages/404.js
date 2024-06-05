@@ -57,10 +57,5 @@ export const pageQuery = graphql`
         )
       }
     }
-    contentfulOperatingDetails(hours: {children: {}}) {
-      hours {
-        hours
-      }
-    }
   }
 `

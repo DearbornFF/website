@@ -27,6 +27,23 @@ const SidebarStyled = styled.div`
     }
   }
 `;
+export const SidebarSection = styled.div`
+  margin:0 0 var(--spacingHorizontalXL);
+  h5{
+    margin:0;
+    padding:0 0 var(--spacingHorizontalXS);
+    color:var(--themeMedium);
+    font-size:var(--fontSize600);
+    font-weight:400;
+    font-family:var(--fontFamilyHeading);
+  }
+  p{
+    margin:0;
+    padding:0 0 var(--spacingVerticalXS);
+    font-size:var(--fontSize400);
+  }
+`;
+
 
 const Sidebar = (props) => {
     return (
