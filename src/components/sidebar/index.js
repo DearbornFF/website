@@ -1,3 +1,4 @@
-import Sidebar from './sidebar';
+import Sidebar, {SidebarSection} from './sidebar';
 
-export default Sidebar
+export default Sidebar;
+export {SidebarSection};

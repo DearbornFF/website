@@ -11,7 +11,7 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Article from "../components/article"
 import Column from "../components/column"
-import Sidebar from "../components/sidebar"
+import Sidebar, {SidebarSection} from "../components/sidebar"
 
 const DirectionsPage = (props) => {
   const page = get(props, 'data.contentfulPages');
@@ -31,11 +31,29 @@ const DirectionsPage = (props) => {
           {renderRichText(page.content, renderOptions)}
         </Column>
         <Sidebar>
-          <p><strong>Hours</strong> {details.hours.hours}</p>
-          <p><strong>Address</strong> {details.location}</p>
-          <p><strong>Contact</strong> <a href="mailto:info@dearbornfamilyfarm.com">info@dearbornfamilyfarm.com</a></p>
-          <p><strong>Parking</strong> {details.parking.parking}</p>
-          <p><strong><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></strong></p>
+          <SidebarSection>
+            <h5>For your visit</h5>
+            {renderRichText(details.visitRecommendations)}
+          </SidebarSection>
+          <SidebarSection>
+            <h5>Hours</h5>
+            {renderRichText(details.hours)}
+          </SidebarSection>
+          <SidebarSection>
+            <h5>Address</h5>
+            <p>{details.location}</p>
+          </SidebarSection>
+          <SidebarSection>
+            <h5>Contact</h5>
+            <p><a href="mailto:info@dearbornfamilyfarm.com">info@dearbornfamilyfarm.com</a></p>
+          </SidebarSection>
+          <SidebarSection>
+            <h5>Parking</h5>
+            <p>{details.parking.parking}</p>
+          </SidebarSection>
+          <SidebarSection>
+            <h5><a href="https://www.facebook.com/profile.php?id=100087198810467">Find us on Facebook</a></h5>
+          </SidebarSection>
         </Sidebar>
       </Article>
     </Layout>
@@ -58,11 +76,14 @@ export const pageQuery = graphql`
   query IndexQuery {
     contentfulOperatingDetails{
       hours {
-        hours
+        raw
       }
       location
       parking {
         parking
+      }
+      visitRecommendations{
+        raw
       }
     }
     file(relativePath: { eq: "396175471_296682689915023_8972487937204021691_n.jpg" }) {
