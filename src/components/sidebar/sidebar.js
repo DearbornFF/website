@@ -37,7 +37,11 @@ export const SidebarSection = styled.div`
     font-weight:400;
     font-family:var(--fontFamilyHeading);
   }
-  p{
+  ul{
+    margin:0;
+    padding:0;
+  }
+  p,li{
     margin:0;
     padding:0 0 var(--spacingVerticalXS);
     font-size:var(--fontSize400);
