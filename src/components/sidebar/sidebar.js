@@ -42,7 +42,7 @@ export const SidebarSection = styled.div`
     padding:0;
   }
   p,li{
-    margin:var(--spacingVerticalXS) 0 0;
+    margin:var(--spacingVerticalS) 0 0;
     padding:0;
     font-size:var(--fontSize400);
     b,strong{
