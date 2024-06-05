@@ -38,15 +38,15 @@ export const SidebarSection = styled.div`
     font-family:var(--fontFamilyHeading);
   }
   ul{
-    margin:0;
+    margin:0 0 0 var(--spacingVerticalXL);
     padding:0;
   }
   p,li{
-    margin:0;
-    padding:0 0 var(--spacingVerticalXS);
+    margin:var(--spacingVerticalXS) 0 0;
+    padding:0;
     font-size:var(--fontSize400);
     b,strong{
-      font-weight:400;
+      font-weight:600;
     }
   }
 `;
